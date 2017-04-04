@@ -8,7 +8,7 @@
     :copyright: (c) 2012 by Matt Wright.
     :license: MIT, see LICENSE for more details.
 """
-
+from datetime import datetime
 from flask import current_app, render_template
 from flask_login import AnonymousUserMixin, UserMixin as BaseUserMixin, \
     LoginManager, current_user
@@ -102,7 +102,8 @@ _default_config = {
         # And always last one...
         'plaintext'
     ],
-    'DEPRECATED_PASSWORD_SCHEMES': ['auto']
+    'DEPRECATED_PASSWORD_SCHEMES': ['auto'],
+    'DATETIME_FACTORY': datetime.utcnow,
 }
 
 #: Default Flask-Security messages

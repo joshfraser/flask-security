@@ -67,7 +67,7 @@ def login_user(user, remember=None):
         else:
             remote_addr = request.headers.getlist("X-Forwarded-For")[0]
 
-        old_current_login, new_current_login = user.current_login_at, datetime.utcnow()
+        old_current_login, new_current_login = user.current_login_at, _security.datetime_factory()
         old_current_ip, new_current_ip = user.current_login_ip, remote_addr
 
         user.last_login_at = old_current_login or new_current_login

@@ -55,7 +55,7 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms='any',
-    install_requires=get_requirements(),
+    # install_requires=get_requirements(),
     tests_require=get_requirements('-dev'),
     cmdclass={'test': PyTest},
     classifiers=[
